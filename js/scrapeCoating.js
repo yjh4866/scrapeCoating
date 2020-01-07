@@ -46,8 +46,8 @@ scrapeCoating.registerEvent = function (scrape)
 	// 注册刮刮事件
 	function eventDown (e) {
 		e.preventDefault()
-		var x = e.offsetX || (e.touches[0].clientX - e.target.offsetLeft)
-		var y = e.offsetY || (e.touches[0].clientY - e.target.offsetTop)
+		var x = (e.pageX || e.touches[0].pageX) - e.target.offsetLeft
+		var y = (e.pageY || e.touches[0].pageY) - e.target.offsetTop
 		//
 		with (ctx) {
 			lineWidth = scrape.attr("pensize") || 10
@@ -62,8 +62,8 @@ scrapeCoating.registerEvent = function (scrape)
 	}
 	function eventMove (e) {
 		e.preventDefault()
-		var x = e.offsetX || (e.touches[0].clientX - e.target.offsetLeft)
-		var y = e.offsetY || (e.touches[0].clientY - e.target.offsetTop)
+		var x = e.offsetX || (e.touches[0].pageX - e.target.offsetLeft)
+		var y = e.offsetY || (e.touches[0].pageY - e.target.offsetTop)
 		//
 		with (ctx) {
 			lineTo(x, y)
