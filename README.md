@@ -10,7 +10,7 @@
 <script src="./js/scrapeCoating.js"></script>
 ```
 
-#页面代码
+# 页面代码
 
 ```
 <canvas id="sc" class="scrape" pensize="50" font="30px Arial" finish=0.1 src="./img/pic2.jpg" width="300" height="145"></canvas>
@@ -32,14 +32,15 @@
 * text，涂层上的文字
 * finish，刮开指定大小则完全刮开（1表示全刮开，0.5表示刮开一半）
 
-#方法
-###1、刮开
+# 方法
+
+### 1、刮开
 ```
 scrapeCoating.scrapeFinished = function (id) {
 	console.log(id)
 }
 ```
-###2、重置
+### 2、重置
 
 ```
 scrapeCoating.reset(id, src, text)
