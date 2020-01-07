@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+		<script src="./js/scrapeCoating.js"></script>
+	</head>
+	<body>
+		<canvas id="sc0" class="scrape" pensize="20" text="刮开看看是什么" finish=0.5 font="Bold 50px Arial" src="./img/pic.jpg" width="548" height="290"></canvas>
+		<canvas id="sc1" class="scrape" text="下面是什么" src="./img/pic.jpg" width="348" height="290"></canvas>
+		<canvas id="sc2" class="scrape" pensize="50" font="30px Arial" finish=0.1 src="./img/pic2.jpg" width="300" height="145"></canvas>
+		<button onclick="clickButton();">再刮一次</button>
+	</body>
+	<script>
+		scrapeCoating.scrapeFinished = function (id) {
+			console.log(id)
+		}
+		function clickButton () {
+			scrapeCoating.reset("sc2", "https://www.baidu.com/img/bd_logo1.png", "再刮一次")
+		}
+	</script>
+</html>
